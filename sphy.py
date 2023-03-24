@@ -28,11 +28,11 @@ import pcraster as pcr
 import pcraster.framework as pcrm
 import numpy as np
 
-tic = time.clock()
+#tic = time.clock()
 
 # Read the model configuration file
 config = configparser.RawConfigParser()
-config.read(sys.argv[1])
+config.read_file(open('sphy_config.cfg'))
 
 class sphy(pcrm.DynamicModel):
 	def __init__(self):
@@ -959,6 +959,6 @@ for i in tssfiles:
 		os.remove(SPHY.outpath + i)
 	shutil.move(i, SPHY.outpath)
 
-toc = time.clock()
-dt = toc - tic
-print('Simulation succesfully completed in '+str(dt)+' seconds!')
+#toc = time.clock()
+#dt = toc - tic
+#print('Simulation succesfully completed in)
